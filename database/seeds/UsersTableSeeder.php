@@ -19,6 +19,8 @@ class UsersTableSeeder extends Seeder
             'email'    => 'ketua@koperasi.com',
             'email_verified_at' => now(),
             'password' => bcrypt('koperasi'),
+            'jenis_kelamin' => 'Laki-Laki',
+            'phone'    => '89672650971',  // Gua tambahin
         ]);
 
         $ketua->assignRole('ketua');
@@ -33,6 +35,8 @@ class UsersTableSeeder extends Seeder
             'email'    => 'bendahara@koperasi.com',
             'email_verified_at' => now(),
             'password' => bcrypt('koperasi'),
+            'jenis_kelamin' => 'Perempuan',
+            'phone'    => '89672650972',// Gua tambahin
         ]);
 
         $bendahara->assignRole('bendahara');
@@ -47,7 +51,8 @@ class UsersTableSeeder extends Seeder
             'email'    => 'anggota@koperasi.com',
             'email_verified_at' => now(),
             'password' => bcrypt('koperasi'),
-            'phone'    => '89672650972',
+            'jenis_kelamin' => 'Perempuan',
+            'phone'    => '89672650973',
         ]);
 
         $anggota->assignRole('anggota');

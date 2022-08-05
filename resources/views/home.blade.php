@@ -4,12 +4,12 @@
 <div class="col-lg-6 col-md-6 mx-auto">
     <div class="card card-user justify-content-center card card-user">
         <div class="image">
-            <img src="{{asset('assets/Img/bguser.jpg')}}" width="100%" alt="...">
+            <img src="{{asset('assets/Img/wallpaperbetter.jpg')}}" width="100%" alt="...">
         </div>
         <br>
         <div class="d-flex justify-content-center">
             <div class="content text-center">
-                <img class="avatar border-white" src="{{asset('assets/Img/avatar.png')}}"  alt="...">
+                <img class="avatar border-white" src="{{asset('assets/Img/businessman.png')}}"  alt="...">
                 <h4 class="title font-weight-border">{{Auth::user()->name}}<br>
                 <a href="#" class="text-muted">
                     <small>{{Auth::user()->email}}</small>

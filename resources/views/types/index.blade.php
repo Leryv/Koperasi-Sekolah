@@ -56,7 +56,7 @@
                         <td>{{$type->bunga}}%</td>
                         @role('anggota')
                         <td>
-                            <a href="{{route('loans.create', $type->id)}}" class="btn btn-outline-primary">
+                            <a href="#" class="btn btn-outline-primary">
                                 Ajukan
                             </a>
                         </td>

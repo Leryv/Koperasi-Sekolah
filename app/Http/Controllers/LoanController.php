@@ -8,7 +8,11 @@ use App\Loan;
 class LoanController extends Controller
 {
     public function index()
-    {
-        return view('loans.index')->with(['loans' => loan::all()]);
+    { 
+        $data = 
+        [
+            'loans' => Loan::with('user','type')->where('terverifikasi', true) -> get(),
+        ];
+        return view('loans.index', $data);
     }
 }
