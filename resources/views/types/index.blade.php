@@ -42,7 +42,7 @@
                     <tr>
                         <th>
                             @role('bendahara')
-                                <a href="{{route('types.edit', $type->id)}}">
+                                <a href="{{route('types.edit', $type->id)}}" class="text-capitalize">
                                     {{$type->nama_jenis_pinjaman}}
                                 </a>
                             @else

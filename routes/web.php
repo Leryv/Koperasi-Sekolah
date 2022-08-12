@@ -10,10 +10,17 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoanController;
 use App\Http\Controllers\SubmissionController;
+use App\Http\Controllers\TypeController;
 use App\Http\Controllers\Savings\SavingController;
 use App\Http\Controllers\TransaksiController;
+use App\Http\Controllers\Installments\InstallmentController;
+use App\Http\Controllers\Users\UserController;
+use App\Http\Controllers\Users\AnggotaController;
+use App\Http\Controllers\Users\PegawaiController;
 
 
 Route::get('/', function () {
@@ -22,11 +29,11 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', [HomeController::class , 'index'])->name('home');
 
 Route::group(['prefix' => 'loans', 'namespace' => 'Loans'], function(){
 
-    route::get('/', [SubmissionController::class, 'index'])->name('loans');
+    route::get('/', [LoanController::class, 'index'])->name('loans');
     route::get('submissions', [SubmissionController::class, 'index'])->name('submissions');
 });
 Route::group(['namespace'], function(){
@@ -42,13 +49,14 @@ Route::group(['prefix' => 'transaksi'], function(){
 });
 
 Route::group(['prefix'=> 'installments', 'namespace'=>'Installments'], function(){
-    route::get('/', 'InstallmentController@index')->name('installments.index');
+    route::get('/', [InstallmentController::class , 'index'])->name('installments.index');
 });
 
 Route::group(['prefix' => 'users', 'namespace' => 'Users'], function(){
-    Route::post('/', 'UserController@store')->name('users.store');
-    Route::get('anggota','AnggotaController@index')->name('anggota.index');
-    Route::get('create', 'UserController@create')->name('users.create');
-    Route::get('pegawai','PegawaiController@index')->name('pegawai.index');
+    Route::post('/', [UserController::class, 'store'])->name('users.store');
+    Route::get('create', [UserController::class, 'create'])->name('users.create');
+    Route::get('anggota',[AnggotaController::class, 'index'])->name('anggota.index');
+    Route::get('pegawai',[PegawaiController::class, 'index'])->name('pegawai.index');
+    // Route::get('create',[PegawaiController::class, 'create'])->name('pegawai.create');
 });
 

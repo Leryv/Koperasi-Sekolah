@@ -9,9 +9,9 @@ class Role extends \Spatie\Permission\Models\Role
     public static function defaultRoles()
     {
         return [
-            'ketua',
-            'bendahara',
-            'anggota',
+            'Ketua',
+            'Bendahara',
+            'Anggota',
         ];
     }
 }

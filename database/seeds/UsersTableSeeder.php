@@ -20,6 +20,8 @@ class UsersTableSeeder extends Seeder
             'email_verified_at' => now(),
             'password' => bcrypt('koperasi'),
             'jenis_kelamin' => 'Laki-Laki',
+            'jabatan' => 'ketua',
+            'alamat' => 'Jakarta',
             'phone'    => '89672650971',  // Gua tambahin
         ]);
 
@@ -36,6 +38,8 @@ class UsersTableSeeder extends Seeder
             'email_verified_at' => now(),
             'password' => bcrypt('koperasi'),
             'jenis_kelamin' => 'Perempuan',
+            'jabatan' => 'bendahara',
+            'alamat' => 'London',
             'phone'    => '89672650972',// Gua tambahin
         ]);
 
@@ -52,6 +56,8 @@ class UsersTableSeeder extends Seeder
             'email_verified_at' => now(),
             'password' => bcrypt('koperasi'),
             'jenis_kelamin' => 'Perempuan',
+            'jabatan' => 'anggota',
+            'alamat' => 'New York',
             'phone'    => '89672650973',
         ]);
 
