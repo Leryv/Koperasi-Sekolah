@@ -69,7 +69,8 @@
             @forelse ($anggotas as $anggota)
                 <tr>
                     <th>
-                        <a href="#">
+                        <a href="{{route('users.edit', $anggota->id)}}"> 
+                            <!-- Dri variable di controller -->
                             {{$anggota->nip}}
                         </a>
                     </th>

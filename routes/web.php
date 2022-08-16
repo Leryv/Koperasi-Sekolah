@@ -54,7 +54,11 @@ Route::group(['prefix'=> 'installments', 'namespace'=>'Installments'], function(
 
 Route::group(['prefix' => 'users', 'namespace' => 'Users'], function(){
     Route::post('/', [UserController::class, 'store'])->name('users.store');
+    Route::get('{user}/edit', 'UserController@edit')->name('users.edit');
     Route::get('create', [UserController::class, 'create'])->name('users.create');
+    Route::patch('{user}/update', [UserController::class , 'update'])->name('users.update');
+
+
     Route::get('anggota',[AnggotaController::class, 'index'])->name('anggota.index');
     Route::get('pegawai',[PegawaiController::class, 'index'])->name('pegawai.index');
     // Route::get('create',[PegawaiController::class, 'create'])->name('pegawai.create');

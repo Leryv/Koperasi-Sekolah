@@ -38,7 +38,7 @@
                 @forelse ($pegawais as $pegawai)
                     <tr>
                         <th>
-                            <a href="#">
+                            <a href="{{route('users.edit', $pegawai->id)}}">
                                 {{$pegawai->nip}}
                             </a>
                         </th>

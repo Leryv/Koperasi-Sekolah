@@ -10,7 +10,7 @@
             <div class="lh-100">
                 <h6 class="mb-0 text-white lh-100">Jenis pinjaman</h6>
             </div>
-            @role('bendahara')
+            @role('ketua|bendahara')
                 <div class="ml-auto">
                     <a href="{{route('types.create')}}">
                         <button type="button" class="btn btn-outline-light text-white">
@@ -41,7 +41,7 @@
                 @forelse ($types as $type)
                     <tr>
                         <th>
-                            @role('bendahara')
+                            @role('ketua|bendahara')
                                 <a href="{{route('types.edit', $type->id)}}" class="text-capitalize">
                                     {{$type->nama_jenis_pinjaman}}
                                 </a>
@@ -56,7 +56,7 @@
                         <td>{{$type->bunga}}%</td>
                         @role('anggota')
                         <td>
-                            <a href="#" class="btn btn-outline-primary">
+                            <a href="{{route('loans.create', $type->id)}}" class="btn btn-outline-primary">
                                 Ajukan
                             </a>
                         </td>

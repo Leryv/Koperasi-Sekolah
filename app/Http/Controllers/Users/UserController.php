@@ -52,12 +52,40 @@ class UserController extends Controller
         return redirect()->route('anggota.index');
     }
 
-    // public function edit($id)
-    // {
-    //     $data =[
-    //         'pegawai'   => User::findOrFail($id),
-    //         'roles'     => Role::pluck('name', 'id'),
-    //     ];
-    //     return view('users.edit', $data);
-    // }
+    //     /**
+    //  * tampilkan form edit pengguna
+    //  *
+    //  * @param [type] $id
+    //  */
+    public function edit($id)
+    {
+        $data = [
+            'pegawai'   => User::findOrFail($id),
+            'roles'     => Role::pluck('name', 'id'),
+        ];
+
+        return view('users.edit', $data);
+        // parameter 
+        // identitas 
+        // untuk mengidentifikasikan 
+
+        // compact per variable hanya satu 
+
+    }
+
+
+    public function update(Request $request, $id)
+    {
+
+        $user = User::findOrFail($id);  // untuk mencari data dengan parameter id 
+        $user->fill($request->except('roles'));  // untuk mencari data kecuali roles
+
+        $user->save();  // Menyimpan data
+        $user->syncRoles($request->get('roles')); // disinkronkan agar semua nya sah
+
+        flash()->success('Data penguna berhasil di perbaharui');
+
+        return redirect()->route('anggota.index');
+    }
+
 }
