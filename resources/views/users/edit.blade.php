@@ -83,9 +83,9 @@
                         <button type="submit" class="btn btn-outline-primary">
                             Simpan
                         </button>
-                        <button type="submit" class="btn btn-outline-secondary">
+                        <a href="{{url()->previous()}}" type="submit" class="btn btn-outline-secondary">
                             Cancel
-                        </button>
+                        </a>
                     </div>
                 </div>
             </form>

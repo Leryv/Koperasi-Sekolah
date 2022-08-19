@@ -85,7 +85,7 @@
                                 <button type="submit" class="btn btn-white mr-2 text-button-login shadow-sm">
                                     {{ __('Kalkulasi') }}
                                 </button>
-                                <a href="{{route('types.index')}}" class="btn btn-warning shadow-sm">
+                                <a href="{{url()->previous()}}" class="btn btn-warning shadow-sm">
                                     Batalkan pengajuan
                                 </a>
                             </div>
