@@ -34,10 +34,13 @@ Route::get('/home', [HomeController::class , 'index'])->name('home');
 Route::group(['prefix' => 'loans', 'namespace' => 'Loans'], function(){
 
     route::get('/', [LoanController::class, 'index'])->name('loans');
+    route::get('create/{type}', [LoanController::class, 'create'])->name('loans.create');
+    route::post('kalkulasi/{type}', [LoanController::class, 'kalkulasi'])->name('loans.kalkulasi');
+
     route::get('submissions', [SubmissionController::class, 'index'])->name('submissions');
 });
-Route::group(['namespace'], function(){
 
+Route::group(['namespace'], function(){
     route::resource('types', 'TypeController');
 });
 
