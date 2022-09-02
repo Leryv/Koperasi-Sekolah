@@ -20,7 +20,7 @@
                             </strong>
                         </div>
                     </div>
-                    <form action="{{route('loans.kalkulasi', $type->id) }}" method="post">
+                    <form action="{{route('loans.store', $type->id) }}" method="post">
                         @csrf
                         <label for="show_jp" class="text-muted">Jumlah Pinjaman</label>
                         <div class="input-group mb-4 shadow-sm">

@@ -11,6 +11,7 @@
     </thead>
     <tbody>
         @forelse (auth()->user()->loans as $pinjaman)
+        <!-- Untuk Membatasi Hanya ada data dri user yang Login -->
         <tr>
             <td>
                 <a href="{{route('installments.show', $pinjaman->id)}}">

@@ -40,6 +40,8 @@
                                 <input type="hidden" name="minimum_jumlah_pinjaman" value="{{ $type->minimum_jumlah_pinjaman }}" readonly>
                                 <input type="hidden" name="maksimum_jumlah_pinjaman" value="{{ $type->maksimum_jumlah_pinjaman }}" readonly>
                             </div>
+
+                            <!-- Teks Di bawah Input -->
                             <small class="text-muted">
                                 Minimum:
                                 <strong class="text-danger mr-3">
@@ -70,6 +72,8 @@
                                 <input type="hidden" name="minimum_lama_angsuran" value="{{ $type->minimum_lama_angsuran }}" readonly>
                                 <input type="hidden" name="maksimum_lama_angsuran" value="{{ $type->maksimum_lama_angsuran }}" readonly>
                             </div>
+
+                            <!-- Teks Di bawah Input -->
                             <small class="text-muted">
                                 Minimum:
                                 <strong class="text-danger mr-3">
@@ -89,6 +93,7 @@
                                     Batalkan pengajuan
                                 </a>
                             </div>
+                            <!-- <span>{{$type -> maksimum_lama_angsuran}}</span> -->
                         </form>
                     </div>
                 </div>

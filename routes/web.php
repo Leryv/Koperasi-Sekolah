@@ -31,13 +31,19 @@ Auth::routes();
 
 Route::get('/home', [HomeController::class , 'index'])->name('home');
 
-Route::group(['prefix' => 'loans', 'namespace' => 'Loans'], function(){
+Route::group(['prefix' => 'loans'
+// , 'namespace' => 'Loans'
+], function(){
 
     route::get('/', [LoanController::class, 'index'])->name('loans');
     route::get('create/{type}', [LoanController::class, 'create'])->name('loans.create');
     route::post('kalkulasi/{type}', [LoanController::class, 'kalkulasi'])->name('loans.kalkulasi');
+    route::post('store/{type}', [LoanController::class, 'store'])->name('loans.store');
+    route::post('{loan}', [LoanController::class, 'destroy'])->name('loans.destroy');
 
+    // Route Submission
     route::get('submissions', [SubmissionController::class, 'index'])->name('submissions');
+    route::post('submissions/{loan}', [SubmissionController::class, 'store'])->name('submissions.store');
 });
 
 Route::group(['namespace'], function(){
@@ -53,6 +59,9 @@ Route::group(['prefix' => 'transaksi'], function(){
 
 Route::group(['prefix'=> 'installments', 'namespace'=>'Installments'], function(){
     route::get('/', [InstallmentController::class , 'index'])->name('installments.index');
+    route::get('/{loan}', [InstallmentController::class , 'show'])->name('installments.show');
+    route::get('/{loan}/create', [InstallmentController::class , 'create'])->name('installments.create');
+    route::post('{loan}/store', [InstallmentController::class , 'store'])->name('installments.store');
 });
 
 Route::group(['prefix' => 'users', 'namespace' => 'Users'], function(){

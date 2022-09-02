@@ -1,7 +1,7 @@
 <?php
 
 namespace App;
-
+use App\Loan;
 use Illuminate\Database\Eloquent\Model;
 
 class Installment extends Model

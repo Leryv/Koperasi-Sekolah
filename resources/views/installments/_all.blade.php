@@ -18,10 +18,10 @@
         <tr>
             <td>
                <a href="{{route('installments.show', $pinjaman->id)}}">
-                    {{$pinjaman->nip}}
+                    {{$pinjaman->user->nip}}
                 </a>
             </td>
-            <td>{{$pinjaman->name}}</td>
+            <td>{{$pinjaman->user->name}}</td>
             <td>{{$pinjaman->type->nama_jenis_pinjaman}}</td>
             <td>Rp{{number_format($pinjaman->jumlah_pinjaman, 2)}}</td>
             <td>Rp{{number_format($pinjaman->jumlah_angsuran, 2)}}</td>
@@ -29,7 +29,7 @@
             <td>{{$pinjaman->tanggal_persetujuan->format('d-m-Y')}}</td>
             @role('bendahara')
                 <td>
-                    <a href="{{route('installments.create', $pinjaman->id)}}" class="btn btn-sm btn-outline-primary">
+                    <a href="{{route('installments.create',$pinjaman->id)}}" class="btn btn-sm btn-outline-primary">
                             Input angsuran
                     </a>
                 </td>

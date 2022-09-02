@@ -10,15 +10,13 @@
             <th scope="col">Lama angsuran</th>
             <th scope="col">Tanggal persetujuan</th>
             @role('bendahara')
-                <th scope="col">Persetujuan</th>
+            <th scope="col">Persetujuan</th>
             @endrole
         </thead>
         <tbody>
         @forelse ($submissions as $pengajuan)
                 <tr>
-                    <th>
-                        {{$pengajuan->user->nip}}
-                    </th>
+                    <th>{{$pengajuan->user->nip}}</th>
                     <td>{{$pengajuan->user->name}}</td>
                     <td>{{$pengajuan->type->nama_jenis_pinjaman}}</td>
                     <td>Rp.{{number_format($pengajuan->jumlah_pinjaman, 2)}}</td>
@@ -27,8 +25,9 @@
                     <td>{{$pengajuan->lama_angsuran}} bulan</td>
                     <td>{{$pengajuan->tanggal_pengajuan->format('d-m-Y')}}</td>
                     @role('bendahara')
+                    <!-- Pengajuan -->
                         <td>
-                            <a href="{{ route('submissions.store', $pengajuan->id) }}" class="btn btn-sm btn-primary" onclick="event.preventDefault();
+                            <a href="{{route('submissions.store', $pengajuan->id)}}" class="btn btn-sm btn-primary" onclick="event.preventDefault();
                             document.getElementById('approve-form').submit();">
                                 Setujui
                             </a>
@@ -45,7 +44,7 @@
                                 @csrf
                             </form>
 
-                            <a href="{{ route('loans.print', $pengajuan->id)}}" target="_blank" class="btn btn-sm btn-info">Cetak</a>
+                            <a href="#" target="_blank" class="btn btn-sm btn-info">Cetak</a>
                         </td>
                     @endrole
                 </tr>

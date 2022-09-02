@@ -21,7 +21,7 @@ class TypeController extends Controller
     public function store(TypesRequest $request) 
     {
         Type::create($request->all());
-        flash('jenis Pinjaman Berhasil ditambahkan.');
+        flash('Jenis Pinjaman Berhasil ditambahkan.');
         return redirect()->route('types.index');
     }
 

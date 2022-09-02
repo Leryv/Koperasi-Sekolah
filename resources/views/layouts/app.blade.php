@@ -72,8 +72,16 @@
             </div>
         </nav>
 
-        <main class="py-4">
-            @yield('content')
+        <main class="p-4">
+            <!-- px padding kanan & kiri -->
+            <!-- px padding atas & bawah -->
+            <div class="content">
+                <div class="row justify-content-center">
+                    @include('flash::message')
+                    @include('layouts._error')
+                    @yield('content')
+                </div>
+            </div>
         </main>
     </div>
 </body>

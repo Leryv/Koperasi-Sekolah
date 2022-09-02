@@ -22,7 +22,7 @@ class UsersTableSeeder extends Seeder
             'jenis_kelamin' => 'Laki-Laki',
             'jabatan' => 'ketua',
             'alamat' => 'Jakarta',
-            'phone'    => '89672650971',  // Gua tambahin
+            'phone'    => '89672650972',  // Gua tambahin
         ]);
 
         $ketua->assignRole('ketua');
@@ -58,7 +58,7 @@ class UsersTableSeeder extends Seeder
             'jenis_kelamin' => 'Perempuan',
             'jabatan' => 'anggota',
             'alamat' => 'New York',
-            'phone'    => '89672650973',
+            'phone'    => '89672650972',
         ]);
 
         $anggota->assignRole('anggota');
