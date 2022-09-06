@@ -20,7 +20,7 @@
         @endrole
         @role('bendahara')
             <div>
-                <a href="#" class="btn btn-outline-primary mb-2">
+                <a href="{{route('savings.create')}}" class="btn btn-outline-primary mb-2">
                     <span>Tambah simpanan anggota</span>
                 </a>
             </div>

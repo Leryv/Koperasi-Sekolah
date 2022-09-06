@@ -6,12 +6,16 @@
         </tr>
     </thead>
     <tbody>
-            <!-- <tr>
-                <td></td>
-                <td></td>
-            </tr> -->
+        @forelse (auth()->user()->savings as $simpanan)
+        <!-- Ini diambil dri nama table savings -->
+            <tr>
+                <td>Rp.{{number_format($simpanan->saldo, 2)}}</td>
+                <td>{{$simpanan->created_at->format('d-m-Y')}}</td>
+            </tr>
+        @empty
             <tr>
                 <td colspan="2">Data simpanan anda belum tersedia.</td>
             </tr>
+        @endforelse
     </tbody>
 </table>

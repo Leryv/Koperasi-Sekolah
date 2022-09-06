@@ -27,7 +27,7 @@ class LoanPolicy
 
     public function create(User $user)
     {
-        return $user->hasRole('bendahara');
+        return $user->hasRole('bendahara'); // Agar Gak 403 Unauthorized
     }
 
     public function cetak(User $user)

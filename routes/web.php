@@ -52,6 +52,10 @@ Route::group(['namespace'], function(){
 
 Route::group(['prefix' =>'savings'],  function(){
     route::get('/anggota', [SavingController::class,'index'])->name('savings.anggota');
+    route::get('create', [SavingController::class,'create'])->name('savings.create');
+    route::post('store', [SavingController::class,'store'])->name('savings.store');
+    route::get('edit/{saving}', [SavingController::class,'edit'])->name('savings.edit');
+    route::patch('update/{saving}', [SavingController::class,'update'])->name('savings.update');
 });
 Route::group(['prefix' => 'transaksi'], function(){
     route::get('', [TransaksiController::class, 'index'])->name('transaksi'); // Ini belum dikasih url
