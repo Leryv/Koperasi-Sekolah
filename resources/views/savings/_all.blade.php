@@ -18,8 +18,8 @@
                 <td>Rp. {{number_format($anggota->saldo, 2)}}</td>
                 <td>{{$anggota->created_at->format('d-m-Y')}}</td>
                 <td>
-                    <a href="#" class="btn btn-info btn-sm">Tambah saldo</a>
-                    <a href="#" class="btn btn-info btn-sm">Tarik Uang</a>
+                    <a href="{{route('savings.edit', $anggota->id)}}" class="btn btn-info btn-sm">Tambah saldo</a>
+                    <a href="{{route('transaksi.edit', $anggota->id)}}" class="btn btn-info btn-sm">Tarik Uang</a>
                 </td>
             </tr>
         @empty

@@ -31,14 +31,25 @@ class SavingController extends Controller
         return redirect()->route('savings.anggota');
     }
 
-    public function edit()
+    public function edit($id)
     {
+        $saving = Saving::findOrFail($id);
 
+        return view('savings.edit', compact('saving'));
     }
-
-    public function update()
+    
+    public function update(Request $request, $id)
     {
+        $saving = Saving::findOrFail($id);
 
+        $hitung = $saving->saldo + $request->saldo;
+        $saving->update([
+            'saldo' => $hitung
+        ]);
+
+        flash('Tabungan anda berhasil ditambahkan.')->success();
+
+        return redirect()->route('savings.anggota');
     }
     
 }

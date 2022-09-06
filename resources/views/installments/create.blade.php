@@ -15,7 +15,6 @@
                                 </strong>
                             </div>
                         </div>
-                        <p class="text-muted text-center pt-3 mb-5">Login dengan akun</p>
                         <form method="POST" action="{{route('installments.store', $loan->id)}}">
                             @csrf
                             <div class="input-group mb-4 shadow-sm">

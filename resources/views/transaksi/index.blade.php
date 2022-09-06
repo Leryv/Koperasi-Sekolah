@@ -34,17 +34,19 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    @role('bendahara')
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
+                            @foreach($transactions as $transaksi)
+                                    <tr>
+                                        <td>{{$transaksi->savings->user->name}}</td>
+                                        <td>{{$transaksi->total}}</td>
+                                        <td>{{$transaksi->savings->saldo}}</td>
+                                        <td>{{$transaksi->created_at->format('d-m-Y')}}</td>
+                                        @role('bendahara')
                                             <td>
                                                 <a href="#" class="btn btn-info btn-sm">Cetak Bukti</a>
                                             </td>
                                         @endrole
                                     </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

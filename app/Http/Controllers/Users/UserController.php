@@ -9,13 +9,13 @@ use App\User;
 
 class UserController extends Controller
 {
-    // public function __construct()
-    // {
-    //     $this->middleware(['role:bendahara']);
-    // }
- 
-   
+    public function __construct()
+    {
+        $this->middleware(['role:bendahara']);
+    }   
+    
     //   Tampilkan formulir pengguna baru
+
     public function create()
     {
         $roles = Role::pluck('name','id');

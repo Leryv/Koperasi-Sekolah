@@ -58,9 +58,12 @@ Route::group(['prefix' =>'savings'],  function(){
     route::patch('update/{saving}', [SavingController::class,'update'])->name('savings.update');
 });
 Route::group(['prefix' => 'transaksi'], function(){
-    route::get('', [TransaksiController::class, 'index'])->name('transaksi'); // Ini belum dikasih url
-});
+    route::get('', 'TransaksiController@index')->name('transaksi');
+    route::get('edit/{saving}', 'TransaksiController@edit')->name('transaksi.edit');
+    route::patch('store/{saving}', 'TransaksiController@store')->name('transaksi.store');
 
+    route::get('cetak-butki/{penarikan}','KwitansiController@show')->name('transaksi.cetak-bukti');
+});
 Route::group(['prefix'=> 'installments', 'namespace'=>'Installments'], function(){
     route::get('/', [InstallmentController::class , 'index'])->name('installments.index');
     route::get('/{loan}', [InstallmentController::class , 'show'])->name('installments.show');

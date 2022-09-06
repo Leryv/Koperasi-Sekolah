@@ -47,7 +47,7 @@
                                 {{_('Simpan Tabungan')}}
                             </button>
                             <a href="{{route('savings.anggota')}}" class="btn btn-warning shadow-sm">
-                                {{_('Simpan Tabungan')}}
+                                {{_('Cancel')}}
                             </a>
                         </div>
                     </form>
