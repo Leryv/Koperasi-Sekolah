@@ -6,7 +6,7 @@
             <div class="col-md-12">
                 <div class="card shadow border-0">
                     <div class="card-body rounded-lg">
-                        <p class="text-muted text-center mb-5">Silahkan Masukkan jenis pinjaman</p>
+                        <p class="text-muted text-center mb-5">Silahkan Ubah Jenis pinjaman</p>
                         <div class="d-flex justify-content-center mb-5">
                         </div>
                         <form method="POST" action="{{route('types.update', $type->id)}}">
