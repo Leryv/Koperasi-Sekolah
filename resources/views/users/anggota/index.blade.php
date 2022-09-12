@@ -28,7 +28,7 @@
         <div class="card border-0">
             <div class="card-body">
                 <h6>Cari Laporan</h6>
-                <form action="#" method="get">
+                <form action="{{route('laporan.anggota')}}" method="get">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">

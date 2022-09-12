@@ -3,7 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+use App\User;
+use App\Withdrawal;
 class Saving extends Model
 {
     protected $table = 'savings';

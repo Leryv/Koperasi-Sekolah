@@ -1,11 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Types;
 
-use App\Http\Requests\TypesRequest;
 use App\Type;
+use App\Http\Requests\TypesRequest;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class TypeController extends Controller
+class TypesController extends Controller
 {
     public function index()
     {

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Saving;
 use App\User;
+use PDF;
 
 class SavingController extends Controller
 {
@@ -51,5 +52,18 @@ class SavingController extends Controller
 
         return redirect()->route('savings.anggota');
     }
+
+    public function cetak()
+    {
+        $this->authorize('cetak', Saving::class);
+
+        $users = User::role('anggota')->with('savings')->get();
+
+        $pdf = PDF::loadView('cetak.savings.saving', compact('users'))->setPaper('a4', 'landscape');
+
+        return $pdf->stream('laporan_simpanan.pdf');
+    }
+
+
     
 }

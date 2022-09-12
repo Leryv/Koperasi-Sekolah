@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use PDF;
 use Illuminate\Http\Request;
 use App\Saving;
 // use App\Penarikan;
@@ -33,6 +34,15 @@ class TransaksiController extends Controller
             }
             flash('Transaksi pengembalian berhasil dilakukan');
             return redirect()->route('savings.anggota');
+    }
+
+    public function cetak($id)
+    {
+        $penarikan = Withdrawal::findOrFail($id);
+
+        $pdf = PDF::loadView('cetak.transaksi.transaksi', compact('penarikan'))->setPaper('a5', 'potrait');
+
+        return $pdf->stream('kwitansi.pdf');
     }
 
 }

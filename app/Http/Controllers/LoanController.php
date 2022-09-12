@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use PDF;
 use App\Loan;
 use App\Type;
+use Illuminate\Http\Request;
 use Nexmo\Laravel\Facade\Nexmo;
 
 
@@ -70,12 +71,12 @@ class LoanController extends Controller
     {
         $loan = Loan::findOrFail($id);
 
-        Nexmo::message()->send([
-            'to'                    =>  '+62' . $loan->user->phone,
-            'from'                  =>  'Koperasi Tadika Mesra',
-            'text'                  =>  'Assalamualaikum wr. wb. kami dari SMK Tadika Mesra ingin memberitahukan bahwa pengajuan pinjaman anda tidak dapat kami setujui karena saldo anda kurang dari Rp.2.000.000. terima kasih'
-            . 'Pengurus Koperasi Tadika Mesra'
-        ]);
+        // Nexmo::message()->send([
+        //     'to'                    =>  '+62' . $loan->user->phone,
+        //     'from'                  =>  'Koperasi Tadika Mesra',
+        //     'text'                  =>  'Assalamualaikum wr. wb. kami dari SMK Tadika Mesra ingin memberitahukan bahwa pengajuan pinjaman anda tidak dapat kami setujui karena saldo anda kurang dari Rp.2.000.000. terima kasih'
+        //     . 'Pengurus Koperasi Tadika Mesra'
+        // ]);
 
         $loan->delete($request->all());
         flash('Pengajuan Pinjaman Berhasil Ditolak');
@@ -91,9 +92,22 @@ class LoanController extends Controller
         } else {
             $loans = Loan::with('user','type')->where('terverifikasi', true)->get();
         }
-        $pdf = PDF::loadView('cetak.loans', compact('loans'))->setPaper('a4', 'landscape');
+        $pdf = PDF::loadView('cetak.loans.loan', compact('loans'))->setPaper('a4', 'landscape');
 
         return $pdf->stream('laporan_pinjaman.pdf');
 
     }
+
+
+    public function print(Loan $loan)
+    {
+        if ($loan->terverifikasi == true) {
+            abort(404);
+        }
+
+        $pdf = PDF::loadView('cetak.loans.loan', compact('loan'));
+
+        return $pdf->stream('pengajuan-pinjaman.pdf');
+    }
+
 }
