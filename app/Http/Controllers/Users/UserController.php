@@ -9,10 +9,6 @@ use App\User;
 
 class UserController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware(['role:bendahara']);
-    }   
     
     //   Tampilkan formulir pengguna baru
 
@@ -52,11 +48,6 @@ class UserController extends Controller
         return redirect()->route('anggota.index');
     }
 
-    //     /**
-    //  * tampilkan form edit pengguna
-    //  *
-    //  * @param [type] $id
-    //  */
     public function edit($id)
     {
         $data = [

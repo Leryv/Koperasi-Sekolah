@@ -26,15 +26,15 @@
                         <tbody>
                             <tr>
                                 <td>Atas Nama </td>
-                                <td>{{$penarikan->tabungan->user->name}}</td>
+                                <td>{{$withdrawals->savings->user->name}}</td>
                             </tr>
                             <tr>
                                 <td>Jumlah Penarikan </td>
-                                <td>Rp.{{number_format($penarikan->total)}}</td>
+                                <td>Rp.{{number_format($withdrawals->total)}}</td>
                             </tr>
                             <tr>
                                 <td>Sisa Saldo </td>
-                                <td>Rp.{{number_format($penarikan->tabungan->saldo)}}</td>
+                                <td>Rp.{{number_format($withdrawals->savings->saldo)}}</td>
                             </tr>
                         </tbody>
                     </table>

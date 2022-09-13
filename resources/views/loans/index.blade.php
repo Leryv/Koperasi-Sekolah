@@ -16,7 +16,7 @@
     {{-- role sekretaris|ketua --}}
     @role('bendahara|ketua')
         <h4>Cari Laporan</h4>
-        <form action="{{route('loans.cetak')}}" method="get">
+        <form action="{{route('report.loans')}}" method="get">
             <div class="row">
                 <div class="col-md-3">
                     <div class="form-group">
@@ -34,7 +34,7 @@
                 </div>
                 @role('ketua|bendahara')
                 <div class="col-md-3">
-                    <a href="{{route('loans.cetak')}}" class="btn btn-outline-secondary">
+                    <a href="{{route('report.loans')}}" class="btn btn-outline-secondary">
                         Print all
                     </a>
                 </div>

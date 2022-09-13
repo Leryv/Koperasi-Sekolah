@@ -22,7 +22,7 @@ class User extends Authenticatable
     {
         return $this->hasMany(Saving::class);
     }
-    public function Totalsaldo()
+    public function totalsaldo()
     {
         return $this->savings()->sum('saldo');
     }

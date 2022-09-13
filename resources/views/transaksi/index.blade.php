@@ -42,7 +42,7 @@
                                         <td>{{$transaksi->created_at->format('d-m-Y')}}</td>
                                         @role('bendahara')
                                             <td>
-                                                <a href="{{route('cetak-bukti.transaksi', $transaksi->id)}" class="btn btn-info btn-sm">Cetak Bukti</a>
+                                                <a href="{{ route('reports.transaksi', $transaksi->id) }}" class="btn btn-info btn-sm">Cetak Bukti</a>
                                             </td>
                                         @endrole
                                     </tr>

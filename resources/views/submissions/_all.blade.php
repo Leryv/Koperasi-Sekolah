@@ -44,7 +44,7 @@
                                 @csrf
                             </form>
 
-                            <a href="#" target="_blank" class="btn btn-sm btn-info">Cetak</a>
+                            <a href="{{ route('loans.print', $pengajuan->id)}}" target="_blank" class="btn btn-sm btn-info">Cetak</a>
                         </td>
                     @endrole
                 </tr>

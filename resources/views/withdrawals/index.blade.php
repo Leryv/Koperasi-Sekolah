@@ -23,15 +23,15 @@
                                 <tr>
                                     <th>Jumlah</th>
                                     <th>Saldo Akhir</th>
-                                    <th>tanggal penarikan</th>
+                                    <th>Tanggal penarikan</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($tabungans as $tabungan)
+                                @foreach($savings as $saving)
                                     <tr>
-                                        <th>{{$tabungan->penarikans->first()->total}}</th>
-                                        <th>{{$tabungan->saldo}}</th>
-                                        <th>{{$tabungan->penarikans->first()->created_at->format('Y-m-d')}}</th>
+                                        <th>{{$saving->withdrawals->first()->total}}</th>
+                                        <th>{{$saving->saldo}}</th>
+                                        <th>{{$saving->withdrawals->first()->created_at->format('Y-m-d')}}</th>
                                     </tr>
                                 @endforeach
                             </tbody>

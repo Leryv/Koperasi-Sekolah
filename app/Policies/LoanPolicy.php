@@ -15,11 +15,6 @@ class LoanPolicy
      *
      * @return void
      */
-    public function __construct()
-    {
-        //
-    }
-
     public function show(User $user, Loan $loan)
     {
         return $user->hasRole(['ketua|bendahara']) || $loan->user->id == $user->id;
